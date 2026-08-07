@@ -1,0 +1,100 @@
+cff-version: 1.2.0
+title: >-
+  Redes de coocorrência de hashtags em Instagram e TikTok no ecossistema
+  discursivo do estelionato e da monetização ilícita
+message: >-
+  Se você utilizar estes dados, scripts ou a documentação metodológica,
+  por favor cite conforme os metadados abaixo.
+type: dataset
+
+authors:
+  - given-names: NOME
+    family-names: SOBRENOME
+    email: email@instituicao.br
+    affiliation: INSTITUIÇÃO
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+  # Duplique o bloco acima para cada autor(a).
+
+abstract: >-
+  Repositório de dados, dicionários de codificação, scripts em R e documentação
+  metodológica da pesquisa que mapeia e compara os ecossistemas discursivos
+  associados ao estelionato, aos golpes financeiros, à monetização ilícita e às
+  estratégias de viralização no Instagram e no TikTok, por meio de redes de
+  coocorrência de hashtags. Corpora coletados com Zeeschuimer + 4CAT a partir de
+  seis hashtags-semente comuns às duas plataformas (3.611 publicações no
+  Instagram e 1.957 no TikTok). O pipeline cobre extração, codificação analítica
+  M/U/R, limpeza, construção de redes de coocorrência, extração de espinha
+  dorsal por disparity filter e análise no Gephi. Achado central: as duas
+  plataformas hospedam o mesmo ecossistema discursivo (35% de sobreposição de
+  vocabulário), mas com gramáticas de visibilidade distintas (apenas 18% de
+  sobreposição de relações).
+
+keywords:
+  - análise de redes
+  - coocorrência de hashtags
+  - estelionato
+  - crime financeiro digital
+  - Instagram
+  - TikTok
+  - métodos digitais
+  - plataformas de mídia social
+  - viralização algorítmica
+  - Gephi
+  - hashtag co-occurrence networks
+  - digital methods
+  - online fraud
+
+repository-code: 'https://github.com/ORG/estelionato-hashtag-networks'
+url: 'https://github.com/ORG/estelionato-hashtag-networks'
+
+version: 1.0.0
+date-released: '2026-01-01'
+
+# Substitua pelo Concept DOI emitido pelo Zenodo após a primeira release.
+doi: 10.5281/zenodo.XXXXXXX
+
+license: CC-BY-4.0  # <- ajuste após definir a licença (ver LICENSE)
+
+references:
+  - type: article
+    authors:
+      - family-names: Serrano
+        given-names: M. Ángeles
+      - family-names: Boguñá
+        given-names: Marián
+      - family-names: Vespignani
+        given-names: Alessandro
+    title: Extracting the multiscale backbone of complex weighted networks
+    journal: Proceedings of the National Academy of Sciences
+    volume: 106
+    issue: 16
+    start: 6483
+    end: 6488
+    year: 2009
+    doi: 10.1073/pnas.0808904106
+  - type: book
+    authors:
+      - family-names: Hine
+        given-names: Christine
+    title: 'Ethnography for the Internet: Embedded, Embodied and Everyday'
+    publisher:
+      name: Bloomsbury
+    year: 2015
+  - type: article
+    authors:
+      - family-names: Jacomy
+        given-names: Mathieu
+      - family-names: Venturini
+        given-names: Tommaso
+      - family-names: Heymann
+        given-names: Sebastien
+      - family-names: Bastian
+        given-names: Mathieu
+    title: >-
+      ForceAtlas2, a continuous graph layout algorithm for handy network
+      visualization designed for the Gephi software
+    journal: PLoS ONE
+    volume: 9
+    issue: 6
+    year: 2014
+    doi: 10.1371/journal.pone.0098679

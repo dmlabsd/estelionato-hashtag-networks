@@ -1,0 +1,44 @@
+# =============================================================================
+# .gitignore
+# =============================================================================
+
+# --- R -----------------------------------------------------------------------
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+.Renviron
+
+# --- Sistema operacional -----------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+._*
+
+# --- Temporários do Office ---------------------------------------------------
+~$*.xlsx
+~$*.docx
+~$*.pptx
+
+# --- Saídas intermediárias que podem ser regeneradas pelos scripts -----------
+# (mantidas fora do versionamento para não inflar o repositório; todas são
+#  reproduzíveis com scripts/run_all.R)
+data/processed/*_limpo.xlsx
+
+# --- ATENÇÃO: dados não anonimizados ----------------------------------------
+# Bases que ainda não passaram por scripts/99_anonimizar.R NUNCA devem ser
+# commitadas. Estas regras são uma rede de segurança, não uma política:
+# a política está em ETHICS.md.
+data/raw/**/*_NAO_ANONIMIZADO*
+data/raw/**/*_raw_original*
+data/raw/**/*.bak
+
+# --- Gephi -------------------------------------------------------------------
+*.gephi.lock
+
+# --- Arquivos grandes --------------------------------------------------------
+*.zip
+*.7z
+*.tar.gz
