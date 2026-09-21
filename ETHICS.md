@@ -31,105 +31,34 @@ que **a publicidade do dado não dispensa a proteção da pessoa**.
 
 ## 3. Tratamento e publicação de dados
 
-### 3.1 O que **não** deve ser publicado
+As bases disponibilizadas neste repositório são **versões anonimizadas** dos
+conjuntos coletados. As bases originais não são publicadas e permanecem
+armazenadas apenas localmente pela equipe de pesquisa.
 
-- Nomes de usuário, @handles, nomes de exibição
-- IDs de publicação, IDs de autor não pseudonimizados
-- URLs ou permalinks de publicações
-- Fotos de perfil, thumbnails, qualquer mídia identificável
-- Dados de geolocalização
-- Legendas íntegras que contenham menções, telefones, e-mails ou dados pessoais
+A anonimização preserva a **estrutura das bases** (mesmas colunas, mesmos nomes)
+para que os scripts possam ser executados sem alterações, mas substitui ou
+remove toda informação que permita identificar pessoas ou localizar as
+publicações originais.
 
-### 3.2 O que pode ser publicado
+| Tipo de informação | Tratamento | Campos |
+|---|---|---|
+| Nomes de usuário e nomes completos | Substituídos por códigos fictícios (`usuario_1`, `nome_1`…). A mesma conta recebe sempre o mesmo código | `author`, `author_full(name)`, `coauthors`, `coauthor_fullnames`, `usertags` |
+| Identificadores de publicações | Substituídos por códigos sequenciais (`post_1`…), preservando a relação entre publicações e respostas | `id`, `thread_id`, `parent_id`, `coauthor_ids` |
+| Texto das publicações | Removido e substituído por `[texto removido]` | `body`, `stickers` |
+| Links e mídias | Substituídos por um endereço fictício (`https://example.com`) | URLs de publicação, perfil, imagens, vídeos e áudio |
+| Localização | Coordenadas removidas; nomes e IDs de lugares codificados | `location_latlong`, `location_name`, `location_id` |
+| Métricas da conta (TikTok) | Removidas, por permitirem identificar perfis | `author_followers`, `author_likes`, `author_videos` |
+| Áudios originais (TikTok) | Nomes que contêm o usuário substituídos por "som original"; IDs e autores codificados | `music_name`, `music_id`, `music_author` |
 
-- Hashtags (o objeto analítico da pesquisa)
-- Tabelas de frequência e dicionários de codificação
-- Arquivos de nós e arestas das redes
-- Métricas agregadas e estatísticas descritivas
-- Legendas higienizadas, quando estritamente necessárias à análise
-- IDs de autor **pseudonimizados** (preservam a estrutura de autoria sem revelar identidade)
+**Campos mantidos.** Hashtags (brutas e limpas), datas, tipo de mídia e métricas
+de engajamento das publicações, necessários para as análises.
 
-### 3.3 Procedimento obrigatório
+**Correspondência entre códigos e dados originais.** Não é publicada. Os códigos
+não permitem reconstruir nomes de usuário nem localizar as publicações.
 
-```r
-source("scripts/99_anonimizar.R")
-```
+**Dados derivados.** Tabelas de frequência, nós e arestas das redes contêm
+apenas hashtags e contagens agregadas, sem qualquer informação sobre autoria.
 
-Este script remove colunas identificadoras, pseudonimiza IDs de autor, higieniza
-texto livre (URLs, @menções, telefones, e-mails) e arredonda métricas de
-engajamento — o arredondamento dificulta a reidentificação por busca reversa de
-números exatos de curtidas.
-
-> ⚠️ **O script não garante anonimato absoluto.** Hashtags raras, combinações
-> incomuns e o próprio texto das legendas podem permitir reidentificação por
-> busca. **Revisão manual antes de qualquer publicação é obrigatória.**
-
-### 3.4 Checklist antes de cada commit em `data/`
-
-- [ ] `99_anonimizar.R` executado sobre todos os arquivos
-- [ ] Nenhuma coluna de autoria, ID bruto ou URL remanescente
-- [ ] Legendas revisadas manualmente por amostragem
-- [ ] Hashtags que constituem nomes próprios identificáveis avaliadas caso a caso
-- [ ] `git diff` inspecionado antes do `git push`
-
-> **Nota sobre o Git:** um dado publicado por engano **permanece no histórico do
-> repositório mesmo após ser removido em um commit posterior**. Se isso ocorrer,
-> não basta apagar o arquivo — é necessário reescrever o histórico
-> (`git filter-repo`) e forçar o push, e assumir que o dado pode ter sido
-> clonado nesse intervalo. **Verificar antes é a única salvaguarda efetiva.**
-
-## 4. Redação de textos derivados
-
-- **Anonimização** dos nomes de usuário mencionados no artigo e no capítulo.
-- **Referência indireta** aos dados de campo, evitando descrições que permitam
-  identificar perfis ou publicações específicas.
-- **Omissão dos IDs** das publicações referenciadas no corpo do texto — tanto por
-  resguardo ético quanto por fluidez narrativa.
-
-### 4.1 O caso das personas
-
-Algumas hashtags do corpus são **nomes de pessoas** (`raul`, `ruyter`,
-`mckelvinho`, `ninoabravanel`, `buzeira`). Elas são analiticamente centrais —
-funcionam como pontes entre o núcleo criminal e o eixo de viralização — e não
-podem simplesmente ser removidas sem destruir o achado.
-
-Critério adotado: essas hashtags são tratadas como **marcadores discursivos**, não
-como identificação de indivíduos. A análise incide sobre a posição estrutural da
-hashtag na rede, não sobre a pessoa. Nenhuma afirmação sobre conduta individual,
-autoria de crime ou responsabilidade penal é feita ou pode ser derivada dos
-resultados.
-
-> Esta é uma zona genuinamente cinzenta. A equipe deve revisitar o critério antes
-> da submissão e considerar, se o comitê de ética assim recomendar, a substituição
-> dos nomes por códigos (`PERSONA_01`) nos arquivos publicados, mantendo a chave
-> de correspondência fora do repositório.
-
-## 5. Aprovação ética
-
-| Item | Situação |
-|---|---|
-| Comitê de Ética em Pesquisa (CEP/CONEP) | *a preencher* |
-| Número do parecer | *a preencher* |
-| Data de aprovação | *a preencher* |
-| Dispensa (se aplicável) e justificativa | *a preencher* |
-
-> Pesquisas com dados públicos de mídias sociais nem sempre exigem submissão ao
-> CEP no Brasil, mas **journals internacionais frequentemente solicitam uma
-> declaração explícita** — de aprovação ou de dispensa fundamentada. Recomenda-se
-> resolver isso antes da submissão, não depois.
-
-## 6. Contato para questões éticas
-
-*a preencher* — e-mail institucional para solicitações de remoção de dados ou
-esclarecimentos sobre o tratamento aplicado.
-
----
-
-**Referências de apoio**
-
-- Franzke, A. S., Bechmann, A., Zimmer, M., Ess, C., & Association of Internet
-  Researchers (2020). *Internet Research: Ethical Guidelines 3.0*. AoIR.
-- Markham, A., & Buchanan, E. (2012). *Ethical Decision-Making and Internet
-  Research: Recommendations from the AoIR Ethics Working Committee (Version 2.0)*.
-- Brasil. Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), art. 4º,
-  II, "b" — tratamento para fins acadêmicos.
+**Referência indireta.** Nos textos resultantes da pesquisa, publicações não são
+citadas literalmente nem atribuídas a perfis, para evitar que possam ser
+localizadas por busca nas plataformas.
