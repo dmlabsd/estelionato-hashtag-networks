@@ -10,11 +10,7 @@ Este repositório é o ambiente de versionamento, documentação e reprodução 
 
 Reúne os dados, os scripts em R, os dicionários de codificação, as figuras e a memória metodológica completa que sustentam o artigo internacional e o capítulo de livro derivados do projeto.
 
-Este README documenta o **percurso metodológico**. Os resultados empíricos (centralidades, comunidades, comparação entre plataformas) estão no artigo e na memória metodológica completa, em [`docs/documento_metodologico_integrado.docx`](docs/). Autoria, financiamento e forma de citação estão em [`CITATION.cff`](CITATION.cff).
-
-**Princípio orientador:** todo número reportado no artigo e no capítulo deve ser rastreável até um arquivo deste repositório e até o bloco de código que o produziu.
-
-> **Convenção de leitura:** os campos marcados com `«confirmar»` dependem de informação que só a equipe pode preencher (versões efetivamente usadas, licença). Estão sinalizados para não serem publicados por engano.
+Este README documenta o **percurso metodológico**. Os resultados empíricos (centralidades, comunidades, comparação entre plataformas) estão no artigo e na memória metodológica completa, em [`docs/documento_metodologico_integrado.docx`](docs/).
 
 ---
 
@@ -27,32 +23,40 @@ Este README documenta o **percurso metodológico**. Os resultados empíricos (ce
 - [5. Procedimentos de tratamento dos dados](#5-procedimentos-de-tratamento-dos-dados)
 - [6. Fluxo completo da análise](#6-fluxo-completo-da-análise)
 - [7. Organização do repositório](#7-organização-do-repositório)
-- [8. Instruções para reproduzir](#8-instruções-para-reproduzir)
-- [9. Dicionário de dados](#9-dicionário-de-dados)
-- [10. Limitações e ressalvas](#10-limitações-e-ressalvas)
-- [11. Ética e proteção de dados](#11-ética-e-proteção-de-dados)
-- [12. Referências](#12-referências)
+- [8. Dicionário de dados](#8-dicionário-de-dados)
+- [9. Limitações e ressalvas](#9-limitações-e-ressalvas)
+- [10. Ética e proteção de dados](#10-ética-e-proteção-de-dados)
+- [11. Referências](#11-referências)
 
 ---
 
 ## 1. Objetivos da pesquisa
 
-A pesquisa investiga os ecossistemas discursivos digitais associados ao estelionato, aos golpes financeiros, à monetização ilícita e às estratégias de viralização em **Instagram** e **TikTok**. O objeto não é uma peça isolada de conteúdo fraudulento, mas a **gramática coletiva** com que esse conteúdo é produzido, etiquetado e distribuído: o conjunto de marcadores (hashtags) que os produtores empregam para inscrever suas publicações em circuitos de visibilidade, comunidade e mercado.
+**A pesquisa investiga os ecossistemas discursivos digitais associados ao estelionato, aos golpes financeiros, à monetização ilícita e às estratégias de viralização em Instagram e TikTok**. O objeto não é uma peça isolada de conteúdo fraudulento, mas a gramática coletiva com que esse conteúdo é produzido, etiquetado e distribuído: o conjunto de marcadores (hashtags) que os produtores empregam para inscrever suas publicações em circuitos de visibilidade, comunidade e mercado.
 
-**Objetivo geral.** Mapear e comparar como o discurso do crime financeiro digital se organiza em cada plataforma.
+A plataforma como parte do fenômeno. Instagram e TikTok não são tratados aqui como fontes de dados, mas como participantes na produção e na transformação do fenômeno analisado. A arquitetura de cada ambiente impõe gramáticas de visibilidade que organizam como esse discurso circula: as hashtags operam como autodeclarações de pertencimento, ao etiquetar uma publicação, o autor a posiciona deliberadamente em um circuito de visibilidade, comunidade e mercado; o alongamento massivo `(#fypppppp)` e a decoração com emojis `(#fypシ)` são performances de apelo algorítmico induzidas pela própria infraestrutura; e uma mesma hashtag-âncora pode mudar de função estrutural conforme o ambiente. O crime, ademais, não circula sozinho: é embalado em entretenimento e vendido como promessa de enriquecimento. Daí que a unidade de análise seja a gramática coletiva, e não a peça fraudulenta isolada.
 
-**Objetivos específicos.** Identificar:
+**Objetivo geral:** Mapear e comparar como o discurso do crime financeiro digital se organiza em cada plataforma, tratando a arquitetura de cada ambiente como parte constitutiva do fenômeno, e não como mero canal.
+
+**Objetivos específicos**: Identificar:
 
 1. o vocabulário temático recorrente;
 2. os agrupamentos semânticos que estruturam o campo (crime, riqueza, viralização, entretenimento);
 3. as personas e os marcadores que funcionam como pontes entre esses agrupamentos;
-4. as estratégias de visibilidade específicas de cada ambiente algorítmico.
+4. as estratégias de visibilidade específicas de cada ambiente algorítmico;
+5. verificar se as duas plataformas hospedam o mesmo ecossistema discursivo e, em caso afirmativo, como cada arquitetura o modula.
 
-**Por que redes de coocorrência.** Três propriedades do método justificam a escolha. (i) As hashtags são **autodeclarações de pertencimento**: ao etiquetar uma publicação, o autor a posiciona deliberadamente em um campo discursivo, o que torna a hashtag um traço observável da intenção comunicativa. (ii) A **coocorrência** — duas hashtags no mesmo post — revela associações que não estão explícitas em nenhuma publicação individual, mas emergem do padrão agregado; é ela que expõe, por exemplo, que o vocabulário do estelionato circula sistematicamente acoplado ao da viralização. (iii) A **representação em grafo** permite aplicar métricas formais (centralidade, modularidade, grau ponderado) que transformam impressões qualitativas em indicadores estruturais comparáveis entre plataformas.
+Por que redes de coocorrência. Três propriedades do método justificam a escolha.
 
-**Desenho espelhado.** O procedimento desenvolvido para o Instagram foi reproduzido integralmente para o TikTok — mesmos limiares, mesmas categorias de codificação, mesma lógica de construção de rede —, ajustando-se apenas o que era estritamente imposto pelas diferenças de estrutura das bases (essencialmente, o índice da coluna de hashtags). Isso garante que as diferenças observadas entre as redes finais reflitam diferenças reais entre as plataformas, e não artefatos de método.
+*(i)* As hashtags são autodeclarações de pertencimento: ao etiquetar uma publicação, o autor a posiciona deliberadamente em um campo discursivo, o que torna a hashtag um traço observável da intenção comunicativa.
 
-**Desenho misto.** A análise de redes mapeia a estrutura do campo em escala, mas opera sobre metadados textuais e **não captura o conteúdo audiovisual** dos vídeos — elemento central nessas plataformas. Por isso o estudo é complementado por uma dimensão etnográfica ([§2.4](#24-dimensão-etnográfica-complementar)).
+*(ii)* A coocorrência, duas hashtags no mesmo post, revela associações que não estão explícitas em nenhuma publicação individual, mas emergem do padrão agregado; é ela que expõe, por exemplo, que o vocabulário do estelionato circula sistematicamente acoplado ao da viralização.
+
+*(iii)* A representação em grafo permite aplicar métricas formais (centralidade, modularidade, grau ponderado) que transformam impressões qualitativas em indicadores estruturais comparáveis entre plataformas.
+
+**Desenho espelhado**. O procedimento desenvolvido para o Instagram foi reproduzido integralmente para o TikTok — mesmos limiares, mesmas categorias de codificação, mesma lógica de construção de rede —, ajustando-se apenas o que era estritamente imposto pelas diferenças de estrutura das bases (essencialmente, o índice da coluna de hashtags). Isso garante que as diferenças observadas entre as redes finais reflitam diferenças reais entre as plataformas, e não artefatos de método.
+
+**Desenho misto**. A análise de redes mapeia a estrutura do campo em escala, mas opera sobre metadados textuais e não captura o conteúdo audiovisual dos vídeos — elemento central nessas plataformas. Por isso o estudo é complementado por uma dimensão etnográfica ([ver 2.4](#24-dimensão-etnográfica-complementar)).
 
 ---
 
@@ -64,8 +68,8 @@ Coleta com **instrumentação idêntica** nas duas plataformas — condição da
 
 - **Ferramenta:** extensão [Zeeschuimer](https://github.com/digitalmethodsinitiative/zeeschuimer) conectada ao [4CAT](https://github.com/digitalmethodsinitiative/4cat) (Capture and Analysis Toolkit), capturando as publicações diretamente da navegação.
 - **Contas:** criadas **novas** no TikTok e no Instagram especificamente para a coleta, para evitar personalização algorítmica do feed por históricos preexistentes.
-- **Busca:** por hashtag, a partir de seis hashtags-semente comuns às duas plataformas ([§3](#3-queries-utilizadas)).
-- **Meta:** ~500 posts por hashtag. **Atingida no Instagram; não atingida no TikTok**, por restrições de paginação/raspagem da plataforma. Essa é a origem direta da assimetria de tamanho entre os corpora (ver [§10](#10-limitações-e-ressalvas)).
+- **Busca:** por hashtag, a partir de seis hashtags-semente comuns às duas plataformas ([ver 3](#3-queries-utilizadas)).
+- **Meta:** ~500 posts por hashtag. **Atingida no Instagram; não atingida no TikTok**, por restrições de paginação/raspagem da plataforma. Essa é a origem direta da assimetria de tamanho entre os corpora.
 
 ### 2.2 Consolidação em bases mestras
 
@@ -81,11 +85,13 @@ As **6 planilhas de entrada** de cada plataforma (uma por semente) foram consoli
 | Filtro de datas | nenhum (não permitido) | nenhum (não permitido) |
 | Meta por hashtag | ~500 posts (**atingida**) | ~500 posts (**não atingida**) |
 | Planilhas de entrada | 6 (uma por semente) | 6 (uma por semente) |
-| Base mestra | `dataset_consolidado_instagram.xlsx` | `dataset_consolidado_tiktok.xlsx` |
+| Base mestra [^1] | `dataset_consolidado_instagram.xlsx` | `dataset_consolidado_tiktok.xlsx` |
 | **Publicações totais** | **3.611** | **1.957** |
 | Colunas de metadados | — | 36 |
 | Coluna de legenda | G | I (`body`) |
 | Coluna de hashtags | **S (índice 19)** | **AD (`hashtags`, índice 30)** |
+
+[^1]: As bases consolidadas são compartilhadas unicamente em seu formato anonimizado.
 
 ### 2.4 Dimensão etnográfica complementar
 
@@ -98,7 +104,7 @@ A coleta automatizada captura metadados estruturados, mas **não captura o conte
 
 A rotina preserva a posição de **observação não participante**: a conta não emite sinais de engajamento que realimentem o algoritmo ou sejam percebidos pelos perfis observados.
 
-O acervo resultante reúne **130 publicações** selecionadas no Instagram entre **maio e setembro de 2025** — 81 de estelionato (62,3%), 30 de furto simples (23,1%) e 19 de roubo mediante violência ou grave ameaça (14,6%). É **complementar, e não substitutivo**, ao corpus quantitativo. Por razões éticas ([§11](#11-ética-e-proteção-de-dados)), **não é depositado neste repositório**: apenas sua descrição agregada é pública.
+O acervo resultante reúne **130 publicações** selecionadas no Instagram entre **maio e setembro de 2025** — 81 de estelionato (62,3%), 30 de furto simples (23,1%) e 19 de roubo mediante violência ou grave ameaça (14,6%). É **complementar, e não substitutivo**, ao corpus quantitativo. Por razões éticas ([ver 10](#10-ética-e-proteção-de-dados)), **não é depositado neste repositório**: apenas sua descrição agregada é pública.
 
 ---
 
@@ -122,47 +128,39 @@ A busca foi feita **por hashtag**. As seis hashtags-semente são **comuns às du
 | Tipo de busca | por hashtag (*hashtag search*) |
 | Filtro de datas | **nenhum** — as plataformas não permitem essa opção na busca por hashtag |
 | Janela temporal | não controlada; o corpus é um recorte do disponível no momento da captura |
-| Período de captura | `«confirmar»` (mês/ano da coleta automatizada) |
+| Período de captura | *a preencher* (mês/ano da coleta automatizada) |
 | Idioma / região | sem filtro |
 
 **Query excluída deliberadamente.** `#bigode` foi retirada do conjunto de sementes: os posts recuperados por ela se afastavam do objeto (referiam-se majoritariamente a pelos faciais). Note-se que `bigode` **permanece como nó** nas redes finais — não como semente, mas como hashtag interna às publicações, onde designa a persona "Raul Bigode". Sua exclusão como query não a remove do campo discursivo capturado pelas outras sementes.
 
-**Consequência amostral a registrar.** Por construção, as seis sementes tendem a ser as hashtags mais frequentes e mais centrais das redes. Sua centralidade deve ser lida como **parcialmente induzida pelo desenho amostral**, não como achado emergente (ver [§10, ponto 2](#10-limitações-e-ressalvas)).
+**Consequência amostral a registrar.** Por construção, as seis sementes tendem a ser as hashtags mais frequentes e mais centrais das redes. Sua centralidade deve ser lida como **parcialmente induzida pelo desenho amostral**, não como achado emergente (ver [§9, ponto 2](#9-limitações-e-ressalvas)).
 
 ---
 
 ## 4. Ferramentas e versões
 
-| Camada | Ferramenta | Versão usada | Papel no fluxo |
+| Camada | Ferramenta | Papel no fluxo |
 |---|---|---|---|
-| Coleta | **Zeeschuimer** (extensão de navegador) | `«confirmar»` | captura das publicações durante a navegação |
-| Coleta | **4CAT** — Capture and Analysis Toolkit | `«confirmar»` | recepção, armazenamento e exportação das capturas (`.xlsx`/`.csv`) |
-| Tratamento e redes | **R** | ≥ 4.2 (usada: `«confirmar»`) | todo o pipeline do dado bruto aos arquivos do Gephi |
-| Tratamento e redes | **RStudio** | `«confirmar»` | ambiente de execução |
-| Visualização e métricas | **Gephi** | ≥ 0.10 (usada: `«confirmar»`) | layout, comunidades, centralidades, figuras |
-| Visualização (opcional) | plugin **Disparity / Backbone** (Gephi) | `«confirmar»` | alternativa sem código ao disparity filter |
-| Planilhas | `«confirmar»` (Excel / LibreOffice) | `«confirmar»` | codificação dos dicionários e montagem da rede combinada |
+| Coleta | **Zeeschuimer** (extensão de navegador) | captura das publicações durante a navegação |
+| Coleta | **4CAT** — Capture and Analysis Toolkit | recepção, armazenamento e exportação das capturas (`.xlsx`/`.csv`) |
+| Tratamento e redes | **R** | todo o pipeline do dado bruto aos arquivos do Gephi |
+| Tratamento e redes | **RStudio** |  ambiente de execução |
+| Visualização e métricas | **Gephi** |  layout, comunidades, centralidades, figuras |
+| Visualização (opcional) | plugin **Disparity / Backbone** (Gephi) |  alternativa sem código ao disparity filter |
+| Planilhas | Excel / LibreOffice | codificação dos dicionários e montagem da rede combinada |
 
 ### Pacotes de R
 
-| Pacote | Versão | Uso |
+| Pacote |  Uso |
 |---|---|---|
-| `readxl` | `«confirmar»` | leitura das bases mestras `.xlsx` |
-| `dplyr` | `«confirmar»` | manipulação e contagem |
-| `tidyr` | `«confirmar»` | `separate_rows()` na extração das hashtags |
-| `stringr` | `«confirmar»` | normalização (`str_trim`, `str_split`) |
-| `purrr` | `«confirmar»` | `map_chr()` na aplicação do dicionário |
-| `igraph` | `«confirmar»` | grafo, `strength`, `degree`, disparity filter |
-| `writexl` / `openxlsx` | `«confirmar»` | exportação das planilhas |
-| `backbone` *(opcional)* | `«confirmar»` | checagem cruzada da implementação do disparity filter |
-
-> **Como preencher as versões.** No mesmo ambiente em que o pipeline foi executado:
->
-> ```r
-> writeLines(capture.output(sessionInfo()), "docs/sessioninfo.txt")
-> ```
->
-> Isso registra R, sistema operacional e todos os pacotes carregados com suas versões. Gephi (*Help → About*), Zeeschuimer (página de extensões do navegador) e 4CAT (rodapé da interface web) precisam ser anotados à mão. Se o pipeline foi executado em máquinas diferentes, reporta-se a versão do ambiente em que foram gerados os arquivos finais (`nodes_*.csv` / `edges_*.csv`), registrando essa ressalva.
+| `readxl` |  leitura das bases mestras `.xlsx` |
+| `dplyr` |  manipulação e contagem |
+| `tidyr` |  `separate_rows()` na extração das hashtags |
+| `stringr` |  normalização (`str_trim`, `str_split`) |
+| `purrr` |  `map_chr()` na aplicação do dicionário |
+| `igraph` |  grafo, `strength`, `degree`, disparity filter |
+| `writexl` / `openxlsx` |  exportação das planilhas |
+| `backbone` *(opcional)* | checagem cruzada da implementação do disparity filter |
 
 ---
 
@@ -183,7 +181,7 @@ Problemas identificados e seu tratamento:
 | Variantes ortográficas/idiomáticas | `dinheiro`/`money`, `viral`/`viralvideo`, `fouryou` | unificação a forma canônica | Dicionário (U) |
 | Alongamentos | TT: `fyppppppppppppppppppppppp` (39×), `paratiiii…` (21×), `fyyyyyyyyyyyyyyyy` (33×) | unificação à forma base | Dicionário (U) |
 
-> **Achado desta etapa:** os dois corpora compartilham os mesmos modos de "sujeira". Isso é, em si, um resultado — as práticas de etiquetagem nas duas plataformas seguem gramáticas semelhantes de viralização (alongar `fyp`, decorar com emojis, repetir o apelo ao algoritmo). A consequência metodológica é que o mesmo conjunto de procedimentos se aplica às duas bases, validando a estratégia espelhada.
+> **Achado desta etapa:** os dois corpora compartilham os mesmos modos de "sujeira". Isso é, em si, um resultado, as práticas de etiquetagem nas duas plataformas seguem gramáticas semelhantes de viralização (alongar `fyp`, decorar com emojis, repetir o apelo ao algoritmo). A consequência metodológica é que o mesmo conjunto de procedimentos se aplica às duas bases, validando a estratégia espelhada.
 
 ### 5.2 Extração e contagem de frequências
 
@@ -416,37 +414,29 @@ O layout foi deixado convergir até a estabilização visual dos nós.
 >
 > Como o verde assume sentidos distintos entre os dois tipos de figura, **cada figura traz legenda própria** explicitando o que a cor representa naquela imagem — condição necessária para a leitura correta do conjunto.
 
-### 6.4 Construção da rede combinada
+### 6.4 Rede combinada
 
-**Arquivo:** `data/network/rede_combinada_instagram_tiktok.xlsx`
+**Arquivo:** `data/network/rede_combinada_instagram_tiktok.xlsx` · **Figura 3**
 
-A rede combinada une o vocabulário das duas plataformas num único grafo, atribuindo a cada nó e a cada aresta um rótulo de **origem** (presente em ambas / só Instagram / só TikTok), o que torna a sobreposição diretamente mensurável.
+As seções anteriores comparam as duas redes lado a lado. A **rede combinada** é uma terceira construção, que torna a sobreposição entre elas diretamente mensurável: une o vocabulário das duas plataformas em um único grafo e atribui a cada nó e a cada aresta um rótulo de **origem** — presente em ambas, só no Instagram ou só no TikTok.
 
 **Método — distinto do das redes individuais:**
 
 - **não se aplica o disparity filter**: o propósito não é extrair espinha dorsal para leitura de clusters, mas mapear o compartilhamento de vocabulário;
 - a rede é a **união** dos conjuntos de nós e de arestas das duas redes;
 - **os pesos não são somados em bruto.** Como os corpora têm tamanhos muito diferentes (3.126 vs 1.737 publicações com hashtag), somá-los faria o Instagram dominar o grafo por puro volume — um artefato de coleta. Em vez disso, os pesos das arestas são normalizados por corpus (**coocorrências por 1.000 publicações**) e as frequências dos nós, como **percentual das publicações de cada base**;
-- o valor de um nó/aresta presente em ambas é a **média das duas métricas relativas**;
-- cada elemento carrega o atributo `origem`, que governa a cor da figura.
+- o valor de um nó ou aresta presente nas duas plataformas é a **média das duas métricas relativas**;
+- cada elemento carrega o atributo `origem`, que governa a cor da Figura 3 (ver [ver 6.3]).
 
-**Resultado:** 117 nós e 1.690 arestas. A repartição por origem está documentada na própria planilha e analisada no artigo.
+**Resultado: 117 nós e 1.690 arestas.** A sobreposição é assimétrica entre os dois níveis:
 
-> ⚠️ **Ressalva de replicação.** Esta etapa foi executada em planilha, não em script R versionado — é o único ponto do pipeline sem código correspondente em `scripts/`.
+| Nível | Em ambas | Só Instagram | Só TikTok | Sobreposição (Jaccard) |
+|---|---|---|---|---|
+| Vocabulário (nós) | 41 | 70 | 6 | 35% |
+| Relações (arestas) | 309 | 1.260 | 121 | 18% |
 
-### 6.5 Quadro-resumo (rede completa vs. espinha dorsal)
+A leitura analítica desses números está no artigo e na memória metodológica; a ressalva de coleta que os acompanha, em [ver 9, ponto 5](#9-limitações-e-ressalvas).
 
-As métricas analíticas reportadas referem-se à **rede completa**; a espinha dorsal é a base das **figuras**.
-
-| Rede | Nós (completa) | Arestas (completa) | Densidade | Nós (backbone) | Arestas (backbone) | Comunidades | Q |
-|---|---|---|---|---|---|---|---|
-| Instagram | 111 | 1.569 ¹ | 0,262 | 88 (87) ² | 273 (268) ² | 3 | 0,329 |
-| TikTok | 47 | 430 | 0,415 | 40 | 86 | 3 | 0,148 |
-| Combinada | 117 | 1.690 | — | n/a ³ | n/a ³ | — | — |
-
-¹ Pares não-direcionados únicos (o arquivo tem 2.256 linhas por duplicação recíproca;
-² Entre parênteses, os valores após o corte adicional de peso (≥ 7) aplicado somente ao Instagram para legibilidade da figura.
-³ A rede combinada não usa backbone 
 
 ---
 
@@ -456,20 +446,18 @@ As métricas analíticas reportadas referem-se à **rede completa**; a espinha d
 .
 ├── README.md                  ← este arquivo (percurso metodológico completo)
 ├── README.en.md               ← versão em inglês
-├── CITATION.cff               ← metadados de citação (lidos pelo GitHub e pelo Zenodo)
 ├── .zenodo.json               ← metadados do depósito Zenodo (DOI por release)
 ├── ETHICS.md                  ← protocolo ético e de anonimização
 ├── .gitignore
 │
 ├── data/
-│   │   ├── dataset_anonimizado_instagram.xlsx
-│   │   └── dataset_anonimizado_tiktok.xlsx
+│   ├── dados_anonimizado_instagram.xlsx
+│   ├── dados_anonimizado_tiktok.xlsx
 │   ├── processed/             ← frequências, cortes, bases limpas
 │   │   ├── frequencia3_instagram.csv
-│   │   ├── hashtags_freq10.csv
-│   │   ├── hashtags_freq20.csv
+│   │   ├── instagram_limpo.csv
+│   │   ├── tiktok_limpo.csv
 │   │   ├── frequencias_tiktok.xlsx
-│   │   ├── dataset_consolidado_instagram_limpo.csv   (= instagram_limpo.xlsx)
 │   │   └── tiktok_limpo.xlsx
 │   └── network/               ← entrada do Gephi
 │       ├── nodes_instagram.csv / edges_instagram.csv
@@ -477,7 +465,7 @@ As métricas analíticas reportadas referem-se à **rede completa**; a espinha d
 │       ├── nodes_*_backbone.csv / edges_*_backbone.csv
 │       └── rede_combinada_instagram_tiktok.xlsx
 │
-├── scripts/                   ← ordem de execução em §8.2
+├── scripts/                   ← implementação comentada: Apêndice B do documento metodológico
 │   ├── Estatísticas descritivas do corpus.R
 │   ├── Análise de frequência de hashtags – Instagram.R
 │   ├── Análise de frequência de hashtags – TikTok.R
@@ -486,7 +474,7 @@ As métricas analíticas reportadas referem-se à **rede completa**; a espinha d
 │   ├── Construção dos nós e arestas instagram.R
 │   ├── Construção dos nós e arestas tiktok.R
 │   ├── Disparity filter Instagram.R
-│   └── Dispatity filter titok.R          ← [sic] grafia original preservada
+│   └── Dispatity filter titok.R
 │
 ├── dictionaries/
 │   ├── README.md              ← esquema das colunas e critérios de codificação
@@ -502,10 +490,7 @@ As métricas analíticas reportadas referem-se à **rede completa**; a espinha d
 │   └── gephi/                 ← projetos .gephi para reabrir as visualizações
 │
 └── docs/
-    ├── documento_metodologico_integrado.docx  ← memória metodológica completa
-    ├── documento_metodologico_integrado.md    ← mesma versão em Markdown
-    ├── Notas_metodológicas.docx               ← notas de coleta
-    └── sessioninfo.txt                        ← saída de sessionInfo() («confirmar»)
+    └── documento_metodologico_integrado.docx  ← memória metodológica completa
 ```
 
 ### Estado dos componentes
@@ -519,87 +504,9 @@ As métricas analíticas reportadas referem-se à **rede completa**; a espinha d
 | Arquivos de nós e arestas para o Gephi | [`data/network/`](data/network/) | ⬜ a depositar |
 | Figuras das redes (Gephi) | [`figures/`](figures/) | ⬜ a depositar |
 
-> ⬜ = diretório e documentação já preparados; os arquivos devem ser copiados pela equipe. Cada pasta tem um `README.md` local com a lista exata dos arquivos esperados e seus nomes canônicos.
-
-> **Nota sobre os nomes dos scripts.** Os nomes acima são os nomes reais dos arquivos, com espaços, acentos e as grafias originais (`Dispatity filter titok.R`), preservados para que a documentação corresponda exatamente ao conteúdo do repositório. Se a equipe optar por renomeá-los ([§8.3](#83-sugestão-opcional-de-renomeação)), **esta seção e a §8.2 devem ser atualizadas na mesma alteração**.
-
 ---
 
-## 8. Instruções para reproduzir
-
-### 8.1 Requisitos e instalação
-
-```bash
-git clone https://github.com/<ORG>/estelionato-hashtag-networks.git
-cd estelionato-hashtag-networks
-```
-
-```r
-install.packages(c(
-  "readxl", "dplyr", "tidyr", "stringr",
-  "purrr", "igraph", "writexl", "openxlsx"
-))
-
-library(readxl);  library(dplyr);  library(tidyr)
-library(stringr); library(purrr);  library(igraph)
-library(writexl); library(openxlsx)
-```
-
-Além disso: **Gephi ≥ 0.10** para as visualizações (opcionalmente com o plugin **Disparity/Backbone**).
-
-> **Caminhos.** Os caminhos de pasta nos scripts foram anonimizados para `caminho/do/projeto/`. Antes de executar, substituí-los pelos caminhos locais — ou, preferencialmente, pelos caminhos relativos deste repositório (`data/raw/`, `data/processed/`, `data/network/`).
-
-### 8.2 Execução passo a passo
-
-Os scripts são executados **nesta ordem**, que não coincide com a ordem alfabética dos arquivos. Cada linha indica o bloco correspondente do **Apêndice B** do documento metodológico, onde está o código comentado.
-
-| Ordem | Script | Apêndice B | Entrada | Saída |
-|---|---|---|---|---|
-| 1 | `Estatísticas descritivas do corpus.R` | B.15 | `data/raw/dataset_consolidado_*.xlsx` | totais de hashtags e de posts com/sem hashtag (IG: 21.812 · 3.611/3.126/485 — TT: 9.149 · 1.957/1.737/220) |
-| 2 | `Análise de frequência de hashtags – Instagram.R`<br>`Análise de frequência de hashtags – TikTok.R` | B.2–B.6 | base mestra | `data/processed/frequencia3_instagram.csv`, `hashtags_freq10.csv`, `hashtags_freq20.csv`, `frequencias_tiktok.xlsx` |
-| 3 | *(codificação humana — não automatizável)* | §6 do doc. | `hashtags_freq10.csv` (291 / 103) | `dictionaries/dicionario_*.xlsx` |
-| 4 | `Ler e padronizar o dicionário instagram.R`<br>`Ler e padronizar o dicionário tiktok.R` | B.7–B.9 | base mestra + dicionário | `data/processed/*_limpo.{csv,xlsx}` (coluna `hashtags_limpas`) |
-| 5 | `Construção dos nós e arestas instagram.R`<br>`Construção dos nós e arestas tiktok.R` | B.10–B.14 | base limpa | `data/network/nodes_*.csv`, `edges_*.csv` |
-| 6 | `Disparity filter Instagram.R`<br>`Dispatity filter titok.R` | B.16–B.17 | nós + arestas | `data/network/nodes_*_backbone.csv`, `edges_*_backbone.csv` |
-| 7 | *(Gephi — ver §8.4)* | §9 do doc. | arquivos de rede | métricas (`Degree`, `Weighted Degree`, `Modularity Class`) e figuras |
-| 8 | *(planilha — sem script)* | §11.6 do doc. | ambas as redes | `data/network/rede_combinada_instagram_tiktok.xlsx` |
-
-> **A etapa 3 é humana e não automatizável:** é o momento da codificação M/U/R. Os dicionários resultantes estão versionados em `dictionaries/`, de modo que **o pipeline é reproduzível de ponta a ponta sem repetir a codificação**.
-
-> **A etapa 8 ainda não tem script versionado.** A rede combinada foi montada em planilha, com a normalização por corpus descrita em [§6.4](#64-construção-da-rede-combinada). Convertê-la em script R é a pendência de reprodutibilidade mais relevante do repositório.
-
-### 8.3 Sugestão (opcional) de renomeação
-
-Os nomes atuais têm espaços, acentos e duas grafias divergentes (`Dispatity filter titok.R`), o que dificulta `source()` em outros sistemas e a citação estável no artigo. Caso a equipe decida padronizar:
-
-| Nome atual | Sugestão |
-|---|---|
-| `Estatísticas descritivas do corpus.R` | `01_estatisticas_descritivas.R` |
-| `Análise de frequência de hashtags – Instagram.R` | `02_frequencias_instagram.R` |
-| `Análise de frequência de hashtags – TikTok.R` | `02_frequencias_tiktok.R` |
-| `Ler e padronizar o dicionário instagram.R` | `03_aplicar_dicionario_instagram.R` |
-| `Ler e padronizar o dicionário tiktok.R` | `03_aplicar_dicionario_tiktok.R` |
-| `Construção dos nós e arestas instagram.R` | `04_rede_instagram.R` |
-| `Construção dos nós e arestas tiktok.R` | `04_rede_tiktok.R` |
-| `Disparity filter Instagram.R` | `05_backbone_instagram.R` |
-| `Dispatity filter titok.R` | `05_backbone_tiktok.R` |
-
-
-### 8.4 Reprodução das figuras no Gephi
-
-1. Importar `nodes_*_backbone.csv` como **Nodes Table** e `edges_*_backbone.csv` como **Edges Table**.
-2. Definir o grafo como **Undirected**.
-3. Rodar **Statistics → Modularity** (resolução 1,0) e **Average Degree**.
-4. Aplicar **ForceAtlas2** com os parâmetros de [§6.3](#63-layout-comunidades-e-centralidades-gephi); deixar convergir até estabilização visual.
-5. Ajustes visuais: tamanho por `Frequency`, cor por `Modularity Class`, espessura por `Weight`, rótulos uniformes.
-6. **Instagram apenas:** aplicar o filtro adicional **Edge Weight ≥ 7**.
-
-> Lembrar que **as métricas analíticas reportadas vêm da rede completa**, não do backbone: para reproduzi-las, importar `nodes_*.csv` / `edges_*.csv` (sem `_backbone`) e rodar as mesmas estatísticas.
-
----
-
-## 9. Dicionário de dados
-
+## 8. Dicionário de dados
 
 **`nodes_<plataforma>.csv`**
 
@@ -629,11 +536,23 @@ Os nomes atuais têm espaços, acentos e duas grafias divergentes (`Dispatity fi
 | `justificativa` | string | racional da decisão *(TikTok)* |
 | `ambiguo` | bool | sinalização para validação humana *(TikTok)* |
 
+**Bases limpas (`*_limpo.*`)**
 
+| Coluna | Descrição |
+|---|---|
+| *(colunas originais)* | preservadas integralmente, incluindo a coluna de hashtags bruta |
+| `hashtags_limpas` | lista separada por vírgulas após R/U/M e deduplicação intra-post; **preserva a cauda longa** (ver [§5.4](#54-aplicação-da-limpeza)) |
+
+**`rede_combinada_instagram_tiktok.xlsx`**
+
+| Coluna | Descrição |
+|---|---|
+| `origem` | `ambas` · `instagram` · `tiktok` — governa a cor da Figura 3 |
+| pesos e frequências | normalizados por corpus; ver o método em [ver 6.4](#64-rede-combinada) |
 
 ---
 
-## 10. Limitações e ressalvas
+## 9. Limitações e ressalvas
 
 Estas ressalvas são parte do desenho da pesquisa e devem acompanhar qualquer citação dos resultados.
 
@@ -645,17 +564,17 @@ Estas ressalvas são parte do desenho da pesquisa e devem acompanhar qualquer ci
 
 **4. Assimetria no tratamento visual.** O corte adicional de peso ≥ 7 aplicado apenas ao Instagram afeta **apenas a renderização**, não a análise: impacto de 1 nó e 5 arestas, com densidade, número de comunidades e partição inalterados. Todas as métricas reportadas são da rede completa ([§6.2](#62-espinha-dorsal-disparity-filter)).
 
-**5. A rede combinada e a assimetria de origem.** A forte diferença entre nós exclusivos do Instagram e do TikTok reflete, em parte, o corpus maior e mais diverso do Instagram e o teto de raspagem que limitou o TikTok — **não apenas uma diferença de riqueza discursiva**. Essa ressalva é declarada na legenda da figura.
+**5. A rede combinada e a assimetria de origem.** A forte diferença entre nós exclusivos do Instagram (70) e do TikTok (6) reflete, em parte, o corpus maior e mais diverso do Instagram e o teto de raspagem que limitou o TikTok — **não apenas uma diferença de riqueza discursiva**. Essa ressalva é declarada na legenda da figura.
 
-**6. Metadados textuais, não conteúdo audiovisual.** A análise de redes opera sobre hashtags e não captura o vídeo. Essa lacuna é endereçada — não eliminada — pela dimensão etnográfica ([§2.4](#24-dimensão-etnográfica-complementar)).
+**6. Metadados textuais, não conteúdo audiovisual.** A análise de redes opera sobre hashtags e não captura o vídeo. Essa lacuna é endereçada — não eliminada — pela dimensão etnográfica ([ber 2.4](#24-dimensão-etnográfica-complementar)).
 
-**7. Duplicação recíproca de arestas no arquivo do Instagram.** Ver a nota de replicação em [§6.1](#61-construção-das-redes). Não altera a leitura analítica (a rede é não-direcionada), mas exige atenção em qualquer recontagem direta do CSV.
+**7. Duplicação recíproca de arestas no arquivo do Instagram.** Ver a nota de replicação em [ver 6.1](#61-construção-das-redes). Não altera a leitura analítica (a rede é não-direcionada), mas exige atenção em qualquer recontagem direta do CSV.
 
-**8. A rede combinada não tem script versionado.** Foi montada em planilha ([§6.4](#64-construção-da-rede-combinada)). Até que seja convertida em código, essa etapa é **documentada mas não automaticamente reproduzível**.
+**8. A rede combinada não tem script versionado.** Foi montada em planilha ([ver 6.4](#64-rede-combinada)). Até que seja convertida em código, essa etapa é **documentada mas não automaticamente reproduzível**.
 
 ---
 
-## 11. Ética e proteção de dados
+## 10. Ética e proteção de dados
 
 Protocolo completo em **[ETHICS.md](ETHICS.md)**.
 
@@ -663,11 +582,9 @@ A natureza do objeto — comunidades que operam regimes de visibilidade ambíguo
 
 > A ética da pesquisa é assumida como **constitutiva de sua construção**, e não como camada de conformidade aposta *a posteriori*: as escolhas de não interação (não curtir, não comentar), de anonimização e de referência indireta são parte do desenho do estudo, não apenas salvaguardas formais.
 
-**Consequência para este repositório.** As bases depositadas em `data/raw/` devem ser versões **sem campos de autoria, IDs e URLs**; a remoção desses campos é condição para qualquer commit nesse diretório — `«confirmar»`: definir se será feita por script versionado (a criar) ou por procedimento manual documentado em `ETHICS.md`. O acervo etnográfico ([§2.4](#24-dimensão-etnográfica-complementar)) não é depositado.
-
 ---
 
-## 12. Referências
+## 11. Referências
 
 - **Serrano, M. Á., Boguñá, M., & Vespignani, A.** (2009). Extracting the multiscale backbone of complex weighted networks. *Proceedings of the National Academy of Sciences*, 106(16), 6483–6488. https://doi.org/10.1073/pnas.0808904106
 - **Jacomy, M., Venturini, T., Heymann, S., & Bastian, M.** (2014). ForceAtlas2, a continuous graph layout algorithm for handy network visualization designed for the Gephi software. *PLoS ONE*, 9(6), e98679. https://doi.org/10.1371/journal.pone.0098679
@@ -675,6 +592,3 @@ A natureza do objeto — comunidades que operam regimes de visibilidade ambíguo
 - **Bastian, M., Heymann, S., & Jacomy, M.** (2009). Gephi: an open source software for exploring and manipulating networks. *ICWSM*.
 - **Peeters, S., & Hagen, S.** (2022). The 4CAT Capture and Analysis Toolkit: A modular tool for transparent and traceable social media research. *Computational Communication Research*, 4(2), 571–589.
 - **Hine, C.** (2015). *Ethnography for the Internet: Embedded, Embodied and Everyday*. London: Bloomsbury.
-
----
-
