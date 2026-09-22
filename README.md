@@ -54,9 +54,9 @@ Por que redes de coocorrência. Três propriedades do método justificam a escol
 
 *(iii)* A representação em grafo permite aplicar métricas formais (centralidade, modularidade, grau ponderado) que transformam impressões qualitativas em indicadores estruturais comparáveis entre plataformas.
 
-**Desenho espelhado**. O procedimento desenvolvido para o Instagram foi reproduzido integralmente para o TikTok — mesmos limiares, mesmas categorias de codificação, mesma lógica de construção de rede —, ajustando-se apenas o que era estritamente imposto pelas diferenças de estrutura das bases (essencialmente, o índice da coluna de hashtags). Isso garante que as diferenças observadas entre as redes finais reflitam diferenças reais entre as plataformas, e não artefatos de método.
+**Desenho espelhado**: O procedimento desenvolvido para o Instagram foi reproduzido integralmente para o TikTok — mesmos limiares, mesmas categorias de codificação, mesma lógica de construção de rede —, ajustando-se apenas o que era estritamente imposto pelas diferenças de estrutura das bases (essencialmente, o índice da coluna de hashtags). Isso garante que as diferenças observadas entre as redes finais reflitam diferenças reais entre as plataformas, e não artefatos de método.
 
-**Desenho misto**. A análise de redes mapeia a estrutura do campo em escala, mas opera sobre metadados textuais e não captura o conteúdo audiovisual dos vídeos — elemento central nessas plataformas. Por isso o estudo é complementado por uma dimensão etnográfica ([ver 2.4](#24-dimensão-etnográfica-complementar)).
+**Desenho misto**: A análise de redes mapeia a estrutura do campo em escala, mas opera sobre metadados textuais e não captura o conteúdo audiovisual dos vídeos — elemento central nessas plataformas. Por isso o estudo é complementado por uma dimensão etnográfica ([ver 2.4](#24-dimensão-etnográfica-complementar)).
 
 ---
 
@@ -133,33 +133,33 @@ A busca foi feita **por hashtag**. As seis hashtags-semente são **comuns às du
 
 **Query excluída deliberadamente.** `#bigode` foi retirada do conjunto de sementes: os posts recuperados por ela se afastavam do objeto (referiam-se majoritariamente a pelos faciais). Note-se que `bigode` **permanece como nó** nas redes finais — não como semente, mas como hashtag interna às publicações, onde designa a persona "Raul Bigode". Sua exclusão como query não a remove do campo discursivo capturado pelas outras sementes.
 
-**Consequência amostral a registrar.** Por construção, as seis sementes tendem a ser as hashtags mais frequentes e mais centrais das redes. Sua centralidade deve ser lida como **parcialmente induzida pelo desenho amostral**, não como achado emergente (ver [§9, ponto 2](#9-limitações-e-ressalvas)).
+**Consequência amostral a registrar.** Por construção, as seis sementes tendem a ser as hashtags mais frequentes e mais centrais das redes. Sua centralidade deve ser lida como **parcialmente induzida pelo desenho amostral**, não como achado emergente ([ver 9, ponto 2](#9-limitações-e-ressalvas)).
 
 ---
 
 ## 4. Ferramentas e versões
 
 | Camada | Ferramenta | Papel no fluxo |
-|---|---|---|---|
+|---|---|---|
 | Coleta | **Zeeschuimer** (extensão de navegador) | captura das publicações durante a navegação |
 | Coleta | **4CAT** — Capture and Analysis Toolkit | recepção, armazenamento e exportação das capturas (`.xlsx`/`.csv`) |
 | Tratamento e redes | **R** | todo o pipeline do dado bruto aos arquivos do Gephi |
-| Tratamento e redes | **RStudio** |  ambiente de execução |
-| Visualização e métricas | **Gephi** |  layout, comunidades, centralidades, figuras |
-| Visualização (opcional) | plugin **Disparity / Backbone** (Gephi) |  alternativa sem código ao disparity filter |
+| Tratamento e redes | **RStudio** | ambiente de execução |
+| Visualização e métricas | **Gephi** | layout, comunidades, centralidades, figuras |
+| Visualização (opcional) | plugin **Disparity / Backbone** (Gephi) | alternativa sem código ao disparity filter |
 | Planilhas | Excel / LibreOffice | codificação dos dicionários e montagem da rede combinada |
 
 ### Pacotes de R
 
-| Pacote |  Uso |
-|---|---|---|
-| `readxl` |  leitura das bases mestras `.xlsx` |
-| `dplyr` |  manipulação e contagem |
-| `tidyr` |  `separate_rows()` na extração das hashtags |
-| `stringr` |  normalização (`str_trim`, `str_split`) |
-| `purrr` |  `map_chr()` na aplicação do dicionário |
-| `igraph` |  grafo, `strength`, `degree`, disparity filter |
-| `writexl` / `openxlsx` |  exportação das planilhas |
+| Pacote | Uso |
+|---|---|
+| `readxl` | leitura das bases mestras `.xlsx` |
+| `dplyr` | manipulação e contagem |
+| `tidyr` | `separate_rows()` na extração das hashtags |
+| `stringr` | normalização (`str_trim`, `str_split`) |
+| `purrr` | `map_chr()` na aplicação do dicionário |
+| `igraph` | grafo, `strength`, `degree`, disparity filter |
+| `writexl` / `openxlsx` | exportação das planilhas |
 | `backbone` *(opcional)* | checagem cruzada da implementação do disparity filter |
 
 ---
@@ -343,7 +343,6 @@ O resultado é gravado em uma **nova coluna** `hashtags_limpas`, preservando-se 
 4. **Cálculo dos pesos.** `count(Source, Target, name = "Weight")`.
 5. **Exportação para o Gephi.** `nodes_*.csv` (`Id`, `Label`, `Frequency`) e `edges_*.csv` (`Source`, `Target`, `Weight`).
 
-> ⚠️ **Nota de replicação sobre as arestas.** O arquivo do **Instagram** contém **2.256 linhas**, mas apenas **1.569 pares não-direcionados únicos**: a geração usa `combn(tags, 2)` **sem ordenar previamente o par**, de modo que a mesma relação aparece, em muitos casos, em duas linhas (p. ex. `viral→fyp` com peso 145 e `fyp→viral` com peso 147). Ao importar como rede **não-direcionada** no Gephi, esses pares recíprocos são fundidos. No **TikTok**, o pipeline já canoniza a ordem, produzindo **430 arestas únicas**. Para replicação exata, ordenar o par dentro de cada post antes do `combn`; a leitura analítica não se altera, pois a rede é não-direcionada em ambos os casos.
 
 **Indicadores das redes:**
 
@@ -493,16 +492,6 @@ A leitura analítica desses números está no artigo e na memória metodológica
     └── documento_metodologico_integrado.docx  ← memória metodológica completa
 ```
 
-### Estado dos componentes
-
-| Componente | Onde está | Estado |
-|---|---|---|
-| Documentação metodológica completa | [`docs/`](docs/) | ✅ |
-| Scripts em R do pipeline (bruto → Gephi) | [`scripts/`](scripts/) | ✅ |
-| Dicionários de codificação M/U/R | [`dictionaries/`](dictionaries/) | ⬜ a depositar |
-| Bases mestras e planilhas intermediárias | [`data/`](data/) | ⬜ a depositar |
-| Arquivos de nós e arestas para o Gephi | [`data/network/`](data/network/) | ⬜ a depositar |
-| Figuras das redes (Gephi) | [`figures/`](figures/) | ⬜ a depositar |
 
 ---
 
@@ -562,11 +551,11 @@ Estas ressalvas são parte do desenho da pesquisa e devem acompanhar qualquer ci
 
 **3. Sem janela temporal controlada.** As plataformas não permitem filtro de datas na busca por hashtag. O corpus é um recorte do disponível no momento da captura.
 
-**4. Assimetria no tratamento visual.** O corte adicional de peso ≥ 7 aplicado apenas ao Instagram afeta **apenas a renderização**, não a análise: impacto de 1 nó e 5 arestas, com densidade, número de comunidades e partição inalterados. Todas as métricas reportadas são da rede completa ([§6.2](#62-espinha-dorsal-disparity-filter)).
+**4. Assimetria no tratamento visual.** O corte adicional de peso ≥ 7 aplicado apenas ao Instagram afeta **apenas a renderização**, não a análise: impacto de 1 nó e 5 arestas, com densidade, número de comunidades e partição inalterados. Todas as métricas reportadas são da rede completa ([ver 6.2](#62-espinha-dorsal-disparity-filter)).
 
 **5. A rede combinada e a assimetria de origem.** A forte diferença entre nós exclusivos do Instagram (70) e do TikTok (6) reflete, em parte, o corpus maior e mais diverso do Instagram e o teto de raspagem que limitou o TikTok — **não apenas uma diferença de riqueza discursiva**. Essa ressalva é declarada na legenda da figura.
 
-**6. Metadados textuais, não conteúdo audiovisual.** A análise de redes opera sobre hashtags e não captura o vídeo. Essa lacuna é endereçada — não eliminada — pela dimensão etnográfica ([ber 2.4](#24-dimensão-etnográfica-complementar)).
+**6. Metadados textuais, não conteúdo audiovisual.** A análise de redes opera sobre hashtags e não captura o vídeo. Essa lacuna é endereçada — não eliminada — pela dimensão etnográfica ([ver 2.4](#24-dimensão-etnográfica-complementar)).
 
 **7. Duplicação recíproca de arestas no arquivo do Instagram.** Ver a nota de replicação em [ver 6.1](#61-construção-das-redes). Não altera a leitura analítica (a rede é não-direcionada), mas exige atenção em qualquer recontagem direta do CSV.
 
