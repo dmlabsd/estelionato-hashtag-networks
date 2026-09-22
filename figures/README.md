@@ -58,9 +58,6 @@ editorial: é condição de leitura correta.
 > entre nós exclusivos do Instagram (70) e do TikTok (6) reflete, em parte, o
 > corpus maior do Instagram e o teto de raspagem que limitou o TikTok.
 
-## Parâmetros de geração
-
-Todos em [`../docs/PARAMETROS_GEPHI.md`](../docs/PARAMETROS_GEPHI.md).
 
 ## Nomenclatura
 
