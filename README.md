@@ -2,7 +2,7 @@
 
 **Instagram e TikTok · mapeamento comparado do discurso do crime financeiro digital**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/1326909787.svg)](https://doi.org/10.5281/zenodo.22943099)
 
 > 🇬🇧 An English version of this README is available at **[README.en.md](README.en.md)**.
 
@@ -588,16 +588,12 @@ Os conteúdos deste repositório (scripts, dicionários, dados derivados,
 figuras e documentação) estão licenciados sob
 [Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-Você pode copiar, redistribuir, adaptar e reutilizar este material,
-inclusive para fins comerciais, desde que atribua o devido crédito às
-autoras, indique se foram feitas alterações e forneça um link para a licença.
-
 ## Como citar
 
 Nicholas, K., Mena, M. F., Arnoni de Camargo, Y., Sander, L., & Sabrina, L. (2026).
 *Redes de coocorrência de hashtags em Instagram e TikTok no ecossistema discursivo
-do estelionato e da monetização ilícita* (v1.0.0) [Conjunto de dados e scripts].
-Zenodo. https://doi.org/[DOI DO REPOSITÓRIO]
+do estelionato e da monetização ilícita* (v1.0.1) [Conjunto de dados e scripts].
+Zenodo. https://doi.org/10.5281/zenodo.22943099
 
 O relatório técnico-metodológico que documenta este repositório está disponível em:
 https://doi.org/10.5281/zenodo.22897219
