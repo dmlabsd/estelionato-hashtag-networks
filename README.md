@@ -581,3 +581,23 @@ A natureza do objeto — comunidades que operam regimes de visibilidade ambíguo
 - **Bastian, M., Heymann, S., & Jacomy, M.** (2009). Gephi: an open source software for exploring and manipulating networks. *ICWSM*.
 - **Peeters, S., & Hagen, S.** (2022). The 4CAT Capture and Analysis Toolkit: A modular tool for transparent and traceable social media research. *Computational Communication Research*, 4(2), 571–589.
 - **Hine, C.** (2015). *Ethnography for the Internet: Embedded, Embodied and Everyday*. London: Bloomsbury.
+
+## Licença
+
+Os conteúdos deste repositório (scripts, dicionários, dados derivados,
+figuras e documentação) estão licenciados sob
+[Creative Commons Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
+
+Você pode copiar, redistribuir, adaptar e reutilizar este material,
+inclusive para fins comerciais, desde que atribua o devido crédito às
+autoras, indique se foram feitas alterações e forneça um link para a licença.
+
+## Como citar
+
+Nicholas, K., Mena, M. F., Arnoni de Camargo, Y., Sander, L., & Sabrina, L. (2026).
+*Redes de coocorrência de hashtags em Instagram e TikTok no ecossistema discursivo
+do estelionato e da monetização ilícita* (v1.0.0) [Conjunto de dados e scripts].
+Zenodo. https://doi.org/[DOI DO REPOSITÓRIO]
+
+O relatório técnico-metodológico que documenta este repositório está disponível em:
+https://doi.org/10.5281/zenodo.22897219

@@ -1,15 +1,38 @@
 {
   "title": "Redes de coocorrência de hashtags em Instagram e TikTok no ecossistema discursivo do estelionato e da monetização ilícita",
-  "description": "<p>Repositório de dados, dicionários de codificação, scripts em R e documentação metodológica da pesquisa que mapeia e compara os ecossistemas discursivos associados ao estelionato, aos golpes financeiros, à monetização ilícita e às estratégias de viralização no Instagram e no TikTok, por meio de redes de coocorrência de hashtags.</p><p><strong>Corpora:</strong> 3.611 publicações no Instagram e 1.957 no TikTok, coletadas com Zeeschuimer + 4CAT a partir de seis hashtags-semente comuns às duas plataformas.</p><p><strong>Pipeline:</strong> extração e contagem de frequências, corte em n≥10, codificação analítica M/U/R (Manter, Unificar, Remover), limpeza, construção de redes de coocorrência, extração de espinha dorsal por disparity filter (Serrano, Boguñá &amp; Vespignani, 2009) e análise no Gephi (ForceAtlas2 + Modularity).</p><p><strong>Achado central:</strong> as duas plataformas hospedam o mesmo ecossistema discursivo — 35% de sobreposição de vocabulário — mas com gramáticas de visibilidade distintas: apenas 18% de sobreposição de relações. Estrutura de conteúdo comum, sintaxe de coocorrências específica de cada ambiente.</p>",
+  "description": "<p>Repositório de dados, dicionários de codificação, scripts em R e documentação metodológica da pesquisa que mapeia e compara os ecossistemas discursivos associados ao estelionato, aos golpes financeiros, à monetização ilícita e às estratégias de viralização no Instagram e no TikTok, por meio de redes de coocorrência de hashtags.</p><p><strong>Corpora:</strong> 3.611 publicações no Instagram e 1.957 no TikTok, coletadas com Zeeschuimer + 4CAT a partir de seis hashtags-semente comuns às duas plataformas.</p><p><strong>Pipeline:</strong> extração e contagem de frequências, corte em n&ge;10, codificação analítica M/U/R (Manter, Unificar, Remover), limpeza, construção de redes de coocorrência, extração de espinha dorsal por disparity filter (Serrano, Boguñá &amp; Vespignani, 2009) e análise no Gephi (ForceAtlas2 + Modularity).</p><p><strong>Achado central:</strong> as duas plataformas hospedam o mesmo ecossistema discursivo — 35% de sobreposição de vocabulário — mas com gramáticas de visibilidade distintas: apenas 18% de sobreposição de relações. Estrutura de conteúdo comum, sintaxe de coocorrências específica de cada ambiente.</p>",
   "upload_type": "dataset",
   "access_right": "open",
+  "license": "cc-by-4.0",
   "language": "por",
+  "version": "1.0.0",
   "creators": [
     {
-      "name": "SOBRENOME, Nome",
-      "affiliation": "INSTITUIÇÃO",
-      "orcid": "0000-0000-0000-0000"
+      "name": "Nicholas, Kayah",
+      "affiliation": "Universidade de São Paulo",
+      "orcid": "0000-0001-5466-5903"
+    },
+    {
+      "name": "Mena, Maria Florencia",
+      "affiliation": "Universidad de Buenos Aires",
+      "orcid": "0000-0003-1608-5339"
+    },
+     {
+      "name": "Arnoni de Camargo, Yara",
+      "affiliation": "Universidade de São Paulo",
+      "orcid": "0009-0005-1214-7346"
+    },
+    {
+      "name": "Sander, Lucas",
+      "affiliation": "Universidade de São Paulo",
+      "orcid": "0000-0001-8001-2260"
+    }, 
+    {
+      "name": "Sabrina, Lara",
+      "affiliation": "Universidade de São Paulo",
+      "orcid": "0000-0003-4392-8565"
     }
+   
   ],
   "keywords": [
     "análise de redes",
@@ -28,10 +51,10 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/ORG/estelionato-hashtag-networks",
-      "relation": "isSupplementTo",
-      "resource_type": "software",
-      "scheme": "url"
+      "identifier": "10.5281/zenodo.22897219",
+      "relation": "isDocumentedBy",
+      "resource_type": "publication-report",
+      "scheme": "doi"
     }
   ],
   "notes": "A anonimização de nomes de usuário e de IDs de publicação é constitutiva do desenho da pesquisa. Ver ETHICS.md no repositório."
