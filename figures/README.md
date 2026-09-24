@@ -59,7 +59,3 @@ editorial: é condição de leitura correta.
 > corpus maior do Instagram e o teto de raspagem que limitou o TikTok.
 
 
-## Nomenclatura
-
-`figNN_<descrição>_<variante>.<ext>` — número com dois dígitos para ordenação
-correta, descrição em minúsculas com underscore, sem acentos.
