@@ -476,13 +476,11 @@ A leitura analítica desses números está no artigo e na memória metodológica
 │   └── Dispatity filter titok.R
 │
 ├── dictionaries/
-│   ├── README.md              ← esquema das colunas e critérios de codificação
 │   ├── dicionario_instagram.xlsx
 │   ├── dicionario_tiktok_preliminar.xlsx
 │   └── dicionario_tiktok_revisado.xlsx
 │
 ├── figures/
-│   ├── README.md              ← legendas, convenções de cor e parâmetros do Gephi
 │   ├── fig01_rede_instagram_backbone.png
 │   ├── fig02_rede_tiktok_backbone.png
 │   ├── fig03_rede_combinada.png
