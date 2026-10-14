@@ -588,7 +588,7 @@ figuras e documentação) estão licenciados sob
 
 ## Como citar
 
-Nicholas, K., Mena, M. F., Arnoni de Camargo, Y., Sander, L., & Sabrina, L. (2026).
+de Souza, K. N., Mena, M. F., Arnoni de Camargo, Y., Sander, L., & Sant Ana Santos, L. S. (2026).
 *Redes de coocorrência de hashtags em Instagram e TikTok no ecossistema discursivo
 do estelionato e da monetização ilícita* (v1.0.1) [Conjunto de dados e scripts].
 Zenodo. https://doi.org/10.5281/zenodo.22943099
