@@ -6,9 +6,9 @@
   "license": "cc-by-4.0",
   "language": "por",
   "version": "1.0.0",
-  "creators": [
+    "creators": [
     {
-      "name": "Nicholas, Kayah",
+      "name": "de Souza, Kayah Nicholas",
       "affiliation": "Universidade de São Paulo",
       "orcid": "0000-0001-5466-5903"
     },
@@ -17,7 +17,7 @@
       "affiliation": "Universidad de Buenos Aires",
       "orcid": "0000-0003-1608-5339"
     },
-     {
+    {
       "name": "Arnoni de Camargo, Yara",
       "affiliation": "Universidade de São Paulo",
       "orcid": "0009-0005-1214-7346"
@@ -26,9 +26,9 @@
       "name": "Sander, Lucas",
       "affiliation": "Universidade de São Paulo",
       "orcid": "0000-0001-8001-2260"
-    }, 
+    },
     {
-      "name": "Sabrina, Lara",
+      "name": "Sant Ana Santos, Lara Sabrina",
       "affiliation": "Universidade de São Paulo",
       "orcid": "0000-0003-4392-8565"
     }
