@@ -2,7 +2,8 @@
 
 **Instagram and TikTok · a comparative mapping of digital financial-crime discourse**
 
-[![DOI](https://zenodo.org/badge/1326909787.svg)](https://doi.org/10.5281/zenodo.22943099)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22943099-blue)](https://doi.org/10.5281/zenodo.22943099)
+
 
 > 🇧🇷 A Portuguese version of this README is available at **[README.md](README.md)**.
 
@@ -588,7 +589,7 @@ figuras e documentação) estão licenciados sob
 
 ## Como citar
 
-Nicholas, K., Mena, M. F., Arnoni de Camargo, Y., Sander, L., & Sabrina, L. (2026).
+de Souza, K. N., Mena, M. F., Arnoni de Camargo, Y., Sander, L., & Sant Ana Santos, L. S. (2026).
 *Redes de coocorrência de hashtags em Instagram e TikTok no ecossistema discursivo
 do estelionato e da monetização ilícita* (v1.0.1) [Conjunto de dados e scripts].
 Zenodo. https://doi.org/10.5281/zenodo.22943099
