@@ -2,7 +2,7 @@
 
 **Instagram e TikTok · mapeamento comparado do discurso do crime financeiro digital**
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22943099.svg)](https://doi.org/10.5281/zenodo.22943099)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.22943099-blue)](https://doi.org/10.5281/zenodo.22943099)
 
 > 🇬🇧 An English version of this README is available at **[README.en.md](README.en.md)**.
 
